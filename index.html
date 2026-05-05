@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guitar Lessons in London, Ontario | Rock, Blues & Country | Andrew Devoy</title>
+<meta name="description" content="Guitar lessons in London, Ontario for kids, teens and adults. Rock, Blues, Country, and other styles. All levels welcome. 10+ years teaching experience.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1814;
+    --paper: #f5f1ea;
+    --gold: #c8873a;
+    --gold-dark: #8b5e25;
+    --gold-pale: #f5e6d0;
+    --rust: #b54a2a;
+    --mid: #6b6158;
+    --rule: rgba(26,24,20,0.12);
+    --display: 'Bebas Neue', sans-serif;
+    --serif: 'Lora', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1rem 3rem;
+    background: rgba(245,241,234,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-logo {
+    font-family: var(--display);
+    font-size: 1.4rem;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--ink);
+    color: var(--paper) !important;
+    padding: 0.45rem 1.2rem !important;
+  }
+  .nav-cta:hover { background: var(--gold); color: var(--paper) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 68px;
+  }
+
+  .hero-left {
+    background: var(--ink);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 4rem 4rem 4rem 3.5rem;
+    overflow: hidden;
+  }
+
+  /* Subtle background texture lines */
+  .hero-left::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 48px,
+      rgba(255,255,255,0.03) 48px,
+      rgba(255,255,255,0.03) 49px
+    );
+  }
+
+  .hero-tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .hero-tag::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 1px;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .hero-headline {
+    font-family: var(--display);
+    font-size: clamp(4rem, 7vw, 6.5rem);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    color: #fff;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  .hero-headline span {
+    color: var(--gold);
+    font-style: normal;
+  }
+
+  .hero-desc {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.6);
+    max-width: 380px;
+    line-height: 1.75;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    position: relative;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: var(--gold);
+    color: #fff;
+    padding: 0.9rem 2.2rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s;
+    font-family: var(--sans);
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary:hover { background: var(--gold-dark); }
+  .btn-ghost {
+    display: inline-block;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-family: var(--sans);
+    padding: 0.9rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+  }
+  .btn-ghost:hover { color: #fff; border-color: #fff; }
+
+  .hero-stats {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: right;
+  }
+  .hero-stat-num {
+    font-family: var(--display);
+    font-size: 2.8rem;
+    line-height: 1;
+    color: rgba(255,255,255,0.08);
+    letter-spacing: 0.02em;
+  }
+  .hero-stat-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.2);
+  }
+
+  .hero-right {
+    background: var(--gold-pale);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Big decorative string lines */
+  .hero-right::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to bottom, rgba(200,135,58,0.15) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(200,135,58,0.08) 1px, transparent 1px);
+    background-size: 100% 6px, 100% 30px;
+  }
+
+  .guitar-wrap {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 3rem;
+  }
+
+  .guitar-label {
+    font-family: var(--display);
+    font-size: 5rem;
+    letter-spacing: 0.08em;
+    color: rgba(200,135,58,0.2);
+    text-align: center;
+    line-height: 1;
+  }
+
+  /* Floating genre pills */
+  .genre-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+    max-width: 320px;
+  }
+  .pill {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0.4rem 1rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .pill-outline {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold-dark);
+  }
+
+  /* Location badge */
+  .location-badge {
+    background: #fff;
+    border: 1px solid var(--rule);
+    padding: 0.7rem 1.4rem;
+    font-size: 0.8rem;
+    color: var(--mid);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+  .location-badge::before {
+    content: '◎';
+    color: var(--gold);
+    font-size: 0.9rem;
+  }
+
+  /* ── DIVIDER ── */
+  .rule-divider {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0 3rem;
+    margin: 0;
+  }
+  .rule-divider::before,
+  .rule-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+  .rule-divider span {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mid);
+    white-space: nowrap;
+    font-weight: 500;
+  }
+
+  /* ── ABOUT ── */
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    min-height: 70vh;
+  }
+  .about-image {
+    background: var(--ink);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+  }
+  .about-image-placeholder {
+    font-family: var(--display);
+    font-size: 8rem;
+    color: rgba(255,255,255,0.06);
+    letter-spacing: 0.05em;
+    text-align: center;
+    line-height: 1;
+    user-select: none;
+  }
+  .about-image-tip {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(200,135,58,0.9);
+    color: #fff;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-weight: 500;
+  }
+  .about-content {
+    padding: 5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .section-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  .section-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background: var(--gold);
+  }
+  .section-title {
+    font-family: var(--display);
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    line-height: 1;
+    letter-spacing: 0.03em;
+    margin-bottom: 1.8rem;
+    color: var(--ink);
+  }
+  .section-body {
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--mid);
+    line-height: 1.85;
+    max-width: 520px;
+  }
+  .section-body + .section-body { margin-top: 1.1rem; }
+  .section-body + .section-body + .section-body { margin-top: 1.1rem; }
+
+  /* ── LESSONS ── */
+  .lessons {
+    background: var(--ink);
+    padding: 6rem 3.5rem;
+  }
+  .lessons-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .lessons .section-title { color: #fff; }
+  .lessons .section-eyebrow { color: var(--gold); }
+  .lessons .section-eyebrow::before { background: var(--gold); }
+  .lessons-intro {
+    font-family: var(--serif);
+    font-style: italic;
+    color: rgba(255,255,255,0.5);
+    font-size: 1rem;
+    line-height: 1.8;
+    padding-top: 1rem;
+  }
+
+  .lessons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: rgba(255,255,255,0.08);
+  }
+  .lesson-card {
+    background: var(--ink);
+    padding: 2.5rem 2rem;
+    transition: background 0.25s;
+  }
+  .lesson-card:hover { background: #1f1d18; }
+  .lesson-num {
+    font-family: var(--display);
+    font-size: 3.5rem;
+    color: rgba(255,255,255,0.06);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.02em;
+  }
+  .lesson-title {
+    font-family: var(--display);
+    font-size: 1.5rem;
+    letter-spacing: 0.04em;
+    color: #fff;
+    margin-bottom: 0.8rem;
+  }
+  .lesson-body {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.75;
+  }
+  .lesson-tag {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border-bottom: 1px solid var(--gold-dark);
+    padding-bottom: 2px;
+    font-weight: 500;
+  }
+
+  /* Styles strip */
+  .styles-strip {
+    background: var(--gold);
+    padding: 1.5rem 3.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    overflow: hidden;
+    position: relative;
+  }
+  .styles-strip-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    white-space: nowrap;
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+  .styles-list {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .style-chip {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    padding: 0.3rem 0.9rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    border: 1px solid rgba(255,255,255,0.25);
+  }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials {
+    padding: 6rem 3.5rem;
+    background: var(--paper);
+  }
+  .testimonials-header {
+    margin-bottom: 4rem;
+  }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    background: var(--rule);
+  }
+  .testimonial {
+    background: var(--paper);
+    padding: 2.5rem;
+    position: relative;
+  }
+  .testimonial::before {
+    content: '\201C';
+    font-family: var(--serif);
+    font-size: 5rem;
+    color: var(--gold-pale);
+    line-height: 1;
+    position: absolute;
+    top: 1rem;
+    left: 2rem;
+  }
+  .testimonial-text {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--ink);
+    margin-bottom: 1.2rem;
+    padding-top: 1rem;
+    position: relative;
+  }
+  .testimonial-cite {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mid);
+    font-weight: 500;
+  }
+
+  /* ── FAQ ── */
+  .faq {
+    background: #fff;
+    padding: 6rem 3.5rem;
+    border-top: 1px solid var(--rule);
+  }
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 3.5rem;
+  }
+  .faq-item {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+  }
+  .faq-q {
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.6rem;
+  }
+  .faq-a {
+    font-size: 0.9rem;
+    color: var(--mid);
+    line-height: 1.75;
+  }
+
+  /* ── CONTACT ── */
+  .contact {
+    background: var(--ink);
+    padding: 7rem 3.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  .contact .section-title { color: #fff; }
+  .contact .section-eyebrow { color: var(--gold); }
+  .contact .section-eyebrow::before { background: var(--gold); }
+  .contact-sub {
+    font-family: var(--serif);
+    font-style: italic;
+    color: rgba(255,255,255,0.5);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .contact-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .contact-row:last-child { border-bottom: none; }
+  .contact-row-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    min-width: 80px;
+    padding-top: 2px;
+  }
+  .contact-row-val {
+    font-family: var(--serif);
+    color: rgba(255,255,255,0.7);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  .contact-row-val a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .contact-row-val a:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #111;
+    padding: 2rem 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  .footer-logo {
+    font-family: var(--display);
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.06em;
+  }
+  .footer-copy {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 0.06em;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 5rem 1.5rem 3rem; }
+    .hero-right { min-height: 300px; }
+    .hero-stats { display: none; }
+    .about { grid-template-columns: 1fr; }
+    .about-image { min-height: 260px; }
+    .about-content { padding: 3rem 1.5rem; }
+    .lessons { padding: 4rem 1.5rem; }
+    .lessons-header { grid-template-columns: 1fr; gap: 1rem; margin-bottom: 2.5rem; }
+    .lessons-grid { grid-template-columns: 1fr; }
+    .styles-strip { padding: 1.2rem 1.5rem; flex-direction: column; align-items: flex-start; gap: 1rem; }
+    .testimonials { padding: 4rem 1.5rem; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .faq { padding: 4rem 1.5rem; }
+    .faq-grid { grid-template-columns: 1fr; gap: 0; }
+    .contact { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 3rem; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem; }
+    .section-title { font-size: 2.2rem; }
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-tag    { animation: fadeUp 0.6s ease both; }
+  .hero-headline { animation: fadeUp 0.6s 0.1s ease both; }
+  .hero-desc   { animation: fadeUp 0.6s 0.2s ease both; }
+  .hero-actions { animation: fadeUp 0.6s 0.3s ease both; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Andrew Devoy Music</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#lessons">Lessons</a></li>
+    <li><a href="#contact" class="nav-cta">Get in touch</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-stats" aria-hidden="true">
+      <div>
+        <div class="hero-stat-num">10+</div>
+        <div class="hero-stat-label">Years teaching</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">All</div>
+        <div class="hero-stat-label">Ages &amp; levels</div>
+      </div>
+    </div>
+    <div class="hero-tag">London, Ontario</div>
+    <h1 class="hero-headline">Guitar<br>lessons<br>that <span>stick.</span></h1>
+    <p class="hero-desc">I've been teaching guitar here in London for over ten years — working with kids, teens, and adults who want to play Rock, Blues, and Country.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Book a lesson</a>
+      <a href="#about" class="btn-ghost">Learn more</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="guitar-wrap">
+      <div class="guitar-label" aria-hidden="true">GUITAR<br>LESSONS</div>
+      <div class="genre-pills">
+        <span class="pill">Rock &amp; Pop</span>
+        <span class="pill">Blues</span>
+        <span class="pill">Country</span>
+        <span class="pill pill-outline">Beginners</span>
+        <span class="pill pill-outline">Kids &amp; Teens</span>
+        <span class="pill pill-outline">Adults</span>
+      </div>
+      <div class="location-badge">London, Ontario · In-person &amp; online</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-image" aria-label="Photo of the teacher">
+    <img src="headshot.jpg" alt="Andrew Devoy — guitar teacher in London Ontario"
+    style="width:100%;height:100%;object-fit:cover;display:block;">
+  </div>
+  <div class="about-content">
+    <div class="section-eyebrow">A bit about me</div>
+    <h2 class="section-title">Ten years, hundreds of students.</h2>
+    <p class="section-body">I'm Andrew Devoy, and I've been teaching guitar here in London for more than ten years. In that time I've worked with all kinds of students — shy kids who'd never played a note, teenagers who wanted to learn their favourite songs, adults who'd always meant to pick it up and finally decided to go for it.</p>
+    <p class="section-body">I teach Rock &amp; Pop, Blues, and Country, and I'm happy to work with complete beginners or more experienced players who want to get better.</p>
+    <p class="section-body">Lessons are pretty relaxed — we go at whatever pace works for you, we play music you actually like, and I try to make sure every lesson feels worthwhile.</p>
+    <a href="#contact" class="btn-primary" style="margin-top: 2.5rem; display: inline-block;">Get in touch</a>
+  </div>
+</section>
+
+<div class="rule-divider"><span>What I offer</span></div>
+
+<!-- LESSONS -->
+<section class="lessons" id="lessons">
+  <div class="lessons-header">
+    <div>
+      <div class="section-eyebrow">Lessons</div>
+      <h2 class="section-title">For all ages<br>and levels.</h2>
+    </div>
+    <p class="lessons-intro">I teach students of all ages and I don't have a one-size-fits-all approach — every person learns differently, so every lesson is a bit different too.</p>
+  </div>
+  <div class="lessons-grid">
+    <div class="lesson-card">
+      <div class="lesson-num" aria-hidden="true">01</div>
+      <div class="lesson-title">Starting from scratch</div>
+      <p class="lesson-body">No experience needed — just an interest in playing. We'll start with the basics: how to hold the guitar, a few simple chords, and strumming patterns that actually sound like music. Most students are playing real songs within the first couple of lessons.</p>
+      <span class="lesson-tag">Complete beginners · All ages</span>
+    </div>
+    <div class="lesson-card">
+      <div class="lesson-num" aria-hidden="true">02</div>
+      <div class="lesson-title">Already playing, want to improve</div>
+      <p class="lesson-body">Plenty of people can strum a few chords but feel like they've hit a wall. If that sounds familiar, we can work on whatever's giving you trouble — lead guitar, music theory, soloing, technique, or just learning songs you've been meaning to figure out.</p>
+      <span class="lesson-tag">Intermediate players</span>
+    </div>
+    <div class="lesson-card">
+      <div class="lesson-num" aria-hidden="true">03</div>
+      <div class="lesson-title">Kids and teenagers</div>
+      <p class="lesson-body">I've taught a lot of young students over the years and I genuinely enjoy it. Lessons are kept fun and low-pressure — the goal is to build confidence and enthusiasm, not just technique. Most parents tell me their kids can't wait for lesson day.</p>
+      <span class="lesson-tag">Ages 6 and up</span>
+    </div>
+  </div>
+</section>
+
+<!-- STYLES STRIP -->
+<div class="styles-strip">
+  <span class="styles-strip-label">Styles I teach</span>
+  <div class="styles-list">
+    <span class="style-chip">Rock &amp; Pop</span>
+    <span class="style-chip">Blues</span>
+    <span class="style-chip">Country</span>
+    <span class="style-chip">Fingerpicking</span>
+    <span class="style-chip">Lead guitar</span>
+    <span class="style-chip">Rhythm &amp; chords</span>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="testimonials-header">
+    <div class="section-eyebrow">Kind words</div>
+    <h2 class="section-title">What students and parents say.</h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial">
+      <p class="testimonial-text">Andrew is a fantastic music teacher.  He has been teaching our daughter for just over a year and a half and I have been extremely happy.  My daughter's lessons are weekly, and Andrew is always on time and prepared.  If lessons are cancelled it has been at my request and he has been extremely flexible in rescheduling.  During the lessons, Andrew is patient, kind, and can keep my daughter on task.  Every week Andrew has a lesson plan and prepares practice homework.  When her lessons started, our daughter had no experience playing guitar.  Within weeks, she learned various notes and chords.  It did not take long before she was reading music and playing songs.  A year into lessons, she is playing some of her favourite country music songs.  I have always been very impressed how Andrew builds upon and leverages her favourite songs to help her learn.  I have seen her confidence grow.  Overall, Andrew is a genuine person with a passion for music.  We feel very fortunate to have found him when looking for a guitar teacher</p>
+      <cite class="testimonial-cite">Parent of a student, age 9</cite>
+    </div>
+    <div class="testimonial">
+      <p class="testimonial-text">I started at 45 thinking it was probably too late. A year later I'm playing songs I actually recognise. Wish I'd done it sooner.</p>
+      <cite class="testimonial-cite">Adult student</cite>
+    </div>
+    <div class="testimonial">
+      <p class="testimonial-text">I'd been playing for a couple of years but felt stuck. After a few lessons I finally started to understand what I was actually doing. Really good teacher.</p>
+      <cite class="testimonial-cite">Teen student</cite>
+    </div>
+    <div class="testimonial">
+      <p class="testimonial-text">Lessons are fun and never feel like a chore. I've tried other teachers before and this is the first time I've actually stuck with it.</p>
+      <cite class="testimonial-cite">Adult student</cite>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="section-eyebrow">Common questions</div>
+  <h2 class="section-title">Good to know.</h2>
+  <div class="faq-grid">
+    <div class="faq-item">
+      <p class="faq-q">Do I need my own guitar to start?</p>
+      <p class="faq-a">Not immediately — we can sort something out for the first lesson or two. But it's worth picking up a beginner acoustic fairly early on; you don't need to spend much to get something decent.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">How long are lessons?</p>
+      <p class="faq-a">Usually 30 or 60 minutes depending on age and what works for you. Younger kids tend to do better with 30-minute sessions, older students and adults often prefer an hour.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Do you teach online?</p>
+      <p class="faq-a">Yes — online lessons work well, especially for students who are a bit further away or just prefer it. It's simpler than you might think to get set up.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">What age do you teach from?</p>
+      <p class="faq-a">Generally from about 6 or 7 upward — it really depends on the child. If you're not sure, just get in touch and we can have a quick chat about it.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Do I need to read music?</p>
+      <p class="faq-a">No. Most of what we do uses guitar tabs, which are very easy to pick up. Reading standard notation is useful but completely optional.</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">How do I get started?</p>
+      <p class="faq-a">Just drop me a message below. I'll get back to you within a day and we can figure out timing, format, and whether it's a good fit — no commitment needed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div>
+    <div class="section-eyebrow">Ready to start?</div>
+    <h2 class="section-title">Drop me a message.</h2>
+    <p class="contact-sub">I'll get back to you within a day or so. If you're not sure whether lessons are right for you or your child, that's fine — happy to have a quick chat first, no pressure.</p>
+    <a href="mailto:adevoymusic@gmail.com" class="btn-primary">Send me an email</a>
+  </div>
+  <div class="contact-details">
+    <div class="contact-row">
+      <span class="contact-row-label">Email</span>
+      <span class="contact-row-val"><a href="mailto:adevoymusic@gmail.com">adevoymusic@gmail.com</a></span>
+    </div>
+    <div class="contact-row">
+      <span class="contact-row-label">Phone</span>
+      <span class="contact-row-val"><a href="tel:+15191234567">519-280-9410</a></span>
+    </div>
+    <div class="contact-row">
+      <span class="contact-row-label">Location</span>
+      <span class="contact-row-val">London, Ontario</span>
+    </div>
+    <div class="contact-row">
+      <span class="contact-row-label">Format</span>
+      <span class="contact-row-val">In-person and online available</span>
+    </div>
+    <div class="contact-row">
+      <span class="contact-row-label">Response</span>
+      <span class="contact-row-val">Usually within 24 hours</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Andrew Devoy Guitar Lessons</div>
+  <div class="footer-copy">London, Ontario &middot; &copy; 2026</div>
+</footer>
+
+</body>
+</html>
